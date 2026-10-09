@@ -1,5 +1,6 @@
 import Sidebar from './components/sidebar'
 import StatCard from './components/Statcard'
+import ContentEngine from './components/ContentEngine'
 import { FileText, CalendarDays, BarChart3, Clock } from "lucide-react"
 import { useState } from 'react'
 
@@ -69,9 +70,14 @@ function App() {
             />
           ) 
           })}
-
-
         </div>
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <ContentEngine />
+          </div>
+        </div>
+
       </main>
     </div>
   )

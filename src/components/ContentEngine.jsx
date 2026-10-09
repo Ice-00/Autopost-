@@ -1,6 +1,6 @@
 function ContentEngine(){
     return(
-        <div className="rounded-xl border purple-500/30 bg-bg-[#10182a] p-6">
+        <div className="rounded-xl border-none purple-500/30 bg-bg-[#10182a] p-6">
             <div className="mb-6">
                 <h2 className="text-xl font-semibold text-white">
                 ✨ Content Engine
@@ -11,8 +11,8 @@ function ContentEngine(){
                 </p>
             </div>
 
-            <form onSubmtit={handleSubmit}>
-                <div>
+            <form className="mt-4">
+                <div className="mt-4">
                     <label  htmlFor="topic" className="text-sm text-white/50">
                      Topic
                     </label>
@@ -25,22 +25,22 @@ function ContentEngine(){
                     />
                 </div>
 
-                <div>
-                    <label htmlFor="tone" className="mt-4 text-sm text-white/50">
+                <div className="mt-4">
+                    <label htmlFor="tone" className="text-sm text-white/50">
                      Tone
                     </label>
 
-                    <input 
-                        type="text" 
-                        id="tone"
-                        placeholder="Enter the tone of your post e.g. Funny, Serious, Informative"
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    />
+                   <select id="tone" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="professional">Professional</option>
+                        <option value="casual">Casual</option>
+                        <option value="humorous">Humorous</option>
+                        <option value="inspirational">Inspirational</option>
+                   </select>
                 </div>
 
-                <div>
+                <div className="mt-4">
                     
-                    <label htmlFor="audience" className="mt-4 text-sm text-white/50">
+                    <label htmlFor="audience" className=" text-sm text-white/50">
                      Audience
                     </label>
 
@@ -51,8 +51,24 @@ function ContentEngine(){
                         className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     />
                 </div>
+
+                <div className="mt-4">
+                    <label htmlFor="frequency" className="text-sm text-white/50">
+                     Frequency
+                    </label>
+
+                    <select id="frequency" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="daily">Once a Day</option>
+                        <option value="Twice">Twice a Day </option>
+                        <option value="Thrice">Thrice a day </option>
+                    </select>
+                </div>
             
             </form>
+            
+            <button type="submit" className="mt-6 w-full rounded-lg bg-purple-500 px-4 py-2 text-white hover:bg-purple-600">
+                Generate Post
+            </button>
 
         </div>
     )
