@@ -1,6 +1,7 @@
 import Sidebar from './components/sidebar'
 import StatCard from './components/Statcard'
 import ContentEngine from './components/ContentEngine'
+import NextPost from './components/NextPost'
 import { FileText, CalendarDays, BarChart3, Clock } from "lucide-react"
 import { useState } from 'react'
 
@@ -81,6 +82,7 @@ function App() {
           <div className="lg:col-span-1 grid grid-rows-2 gap-6">
             <NextPost />
           </div>
+          
         </div>
 
       </main>

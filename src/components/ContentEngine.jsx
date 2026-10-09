@@ -1,6 +1,6 @@
 function ContentEngine(){
     return(
-        <div className="rounded-xl border-none purple-500/30 bg-bg-[#10182a] p-6">
+        <div className="mt-8 rounded-xl border border-purple-800 purple-500/30 bg-bg-[#10182a] p-6">
             <div className="mb-6">
                 <h2 className="text-xl font-semibold text-white">
                 ✨ Content Engine

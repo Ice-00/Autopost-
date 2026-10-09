@@ -1,6 +1,6 @@
 function NextPost(){
     return(
-        <div className="rounded-xl border border-purple-500/30 bg-[#10182a] p-6">
+        <div className="mt-8 rounded-xl border border-purple-500/30 bg-[#10182a] p-6">
 
             <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold">Next Post</h3>
@@ -19,7 +19,7 @@ function NextPost(){
                    Small consitent Actions Compound with time to create massive results. Start small, stay consistent, <br/> and watch your efforts pay off over time. #Consistency #Growth
                 </p>
             </div>
-            
+
             <div className="mt-6 flex gap-2">
                 <button className="flex-1 rounded-lg bg-purple-500 px-4 py-2 text-white hover:bg-purple-600">
                     Edit Post
