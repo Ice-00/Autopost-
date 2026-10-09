@@ -73,8 +73,13 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+
           <div className="lg:col-span-2">
             <ContentEngine />
+          </div>
+
+          <div className="lg:col-span-1 grid grid-rows-2 gap-6">
+            <NextPost />
           </div>
         </div>
 
