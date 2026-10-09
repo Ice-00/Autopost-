@@ -1,6 +1,7 @@
 import Sidebar from './components/sidebar'
 import StatCard from './components/Statcard'
-import { FileText, CalendarDays, BarChart3 } from "lucide-react"
+import { FileText, CalendarDays, BarChart3, Clock } from "lucide-react"
+import { useState } from 'react'
 
 const stats = [
   {
@@ -23,11 +24,14 @@ const stats = [
     change: "↓ 5%",
     icon: BarChart3,
   },
+
+  
 ]
 
 
 
 function App() {
+  const [isActive, setIsActive] = useState(false);
   return (
     <div className="flex min-h-screen bg-[#080b14] text-white">
       <Sidebar />
@@ -40,10 +44,13 @@ function App() {
             <p className="mt-2 text-white/50">Your content engine is running. Here's what's happening.</p>
           </div>
 
-          <div className="flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 text-sm text-green-400">
-            <span className="h-2 w-2 rounded-full bg-green-400"></span>
-            AI ACTIVE
-          </div>
+          <button onClick={() => setIsActive(!isActive)}
+           className= {`flex items-center gap-2 rounded-full  px-4 py-2 text-sm  ${isActive ? 'border border-green-500/30 bg-green-500/10 text-green-400' : 'border border-amber-500/30 bg-amber-500/10 text-amber-400'}`}>
+
+            <span className={`h-2 w-2 rounded-full ${isActive ? 'bg-green-400' : 'bg-amber-400'}`}></span>
+
+             {isActive ? "AI ACTIVE" : "AI PAUSED"}
+          </button>
 
         </div>
 
@@ -51,6 +58,9 @@ function App() {
           {stats.map((stat) => {
           return(
             <StatCard
+              isActive = {isActive}
+              setIsActive = {setIsActive}
+              key={stat.title}
               title={stat.title}
               value={stat.value}
               change={stat.change}
