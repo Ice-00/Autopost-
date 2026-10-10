@@ -1,13 +1,13 @@
 function RecentPosts() {
     return (
-        <div className="mt-8 rounded-xl border border-purple-500/30 bg-[#10182a] p-4">
+        <div className="mt-8 rounded-xl border border-blue-500/30 bg-[#10182a] p-4">
             <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold">
                     Recent Posts
                 </h3>
 
                 <a
-                    className="text-sm text-purple-400 hover:text-purple-300"
+                    className="text-sm text-blue-400 hover:text-blue-300"
                     href="/posts"
                 >
                     View All 🡒

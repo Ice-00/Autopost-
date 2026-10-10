@@ -23,7 +23,7 @@ function Sidebar() {
 
                 <nav className="px-4 mt-8 px-4">
                     <ul>
-                        <li className="flex items-center gap-3 rounded-lg bg-purple-500/10 p-3 text-purple-400">
+                        <li className="flex items-center gap-3 rounded-lg bg-blue-500/10 p-3 text-blue-400">
                             <LayoutDashboard size={20} />
                             <span>Dashboard</span>
                         </li>

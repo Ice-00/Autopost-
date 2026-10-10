@@ -3,6 +3,7 @@ import StatCard from './components/Statcard'
 import ContentEngine from './components/ContentEngine'
 import NextPost from './components/NextPost'
 import RecentPosts from './components/RecentPosts'
+import Header from './components/Header'
 import { FileText, CalendarDays, BarChart3, Clock } from "lucide-react"
 import { useState } from 'react'
 
@@ -40,6 +41,7 @@ function App() {
       <Sidebar />
 
       <main className="flex-1 p-8">
+        <Header/>
 
         <div className="flex items-center justify-between"> 
           <div>

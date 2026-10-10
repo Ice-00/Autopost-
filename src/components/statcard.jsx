@@ -1,6 +1,3 @@
-
-
-
 function StatCard({title, value, change,icon: Icon}){
 
        const isPositive = change.startsWith('↑');

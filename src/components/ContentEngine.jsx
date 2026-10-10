@@ -1,6 +1,6 @@
 function ContentEngine(){
     return(
-        <div className="mt-8 rounded-xl border border-purple-800 purple-500/30 bg-bg-[#10182a] p-6">
+        <div className="mt-8 rounded-xl border border-blue-800 blue-500/30 bg-bg-[#10182a] p-6">
             <div className="mb-6">
                 <h2 className="text-xl font-semibold text-white">
                 ✨ Content Engine
@@ -60,7 +60,7 @@ function ContentEngine(){
                        <label htmlFor="frequency" className="text-sm text-white/50">
                             Posting Frequency
                        </label>
-                       
+
                        <select id="frequency" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                            <option value="daily">Once a Day</option>
                            <option value="Twice">Twice a Day </option>
@@ -71,8 +71,8 @@ function ContentEngine(){
             
             </form>
             
-            <button type="submit" className="mt-6 w-full rounded-lg bg-purple-500 px-4 py-2 text-white hover:bg-purple-600">
-                Generate Post
+            <button type="submit" className="mt-6 w-full rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+                Generate Post 🡒
             </button>
 
         </div>
