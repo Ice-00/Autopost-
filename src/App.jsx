@@ -4,6 +4,7 @@ import ContentEngine from './components/ContentEngine'
 import NextPost from './components/NextPost'
 import RecentPosts from './components/RecentPosts'
 import Header from './components/Header'
+import QuickActions from './components/QuickActions'
 import { FileText, CalendarDays, BarChart3, Clock } from "lucide-react"
 import { useState } from 'react'
 
@@ -88,6 +89,8 @@ function App() {
           </div>
 
         </div>
+
+        <QuickActions />
 
       </main>
     </div>

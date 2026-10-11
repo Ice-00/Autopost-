@@ -13,7 +13,7 @@ function ContentEngine(){
 
             <form className="mt-4">
                 <div className="mt-4">
-                    <label  htmlFor="topic" className="text-sm text-white/50">
+                    <label  htmlFor="topic" className="text-sm font-bold text-white">
                      Topic
                     </label>
                 
@@ -21,14 +21,14 @@ function ContentEngine(){
                         type="text" 
                         id="topic"
                         placeholder="Enter a topic for your post e.g. AI, Tech, Marketing"
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent"
                     />
                 </div>
 
 
                 <div className="mt-4">
                     
-                    <label htmlFor="audience" className=" text-sm text-white/50">
+                    <label htmlFor="audience" className=" text-sm font-bold text-white">
                      Audience
                     </label>
 
@@ -36,19 +36,19 @@ function ContentEngine(){
                         type="text" 
                         id="audience"
                         placeholder="Enter the audience of your post e.g. Professionals, Students, General Public"
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent"
                     />
                 </div>
 
 
 
-               <div className="grid grid-cols-2 gap-4">
+               <div className="grid grid-cols-2 mt-4 gap-4">
                    
                    <div className="">
-                       <label htmlFor="tone" className="text-sm text-white/50">
+                       <label htmlFor="tone" className="text-sm font-bold text-white">
                         Tone
                        </label>
-                      <select id="tone" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                      <select id="tone" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent">
                            <option value="professional">Professional</option>
                            <option value="casual">Casual</option>
                            <option value="humorous">Humorous</option>
@@ -57,11 +57,11 @@ function ContentEngine(){
                    </div>
 
                    <div className="">
-                       <label htmlFor="frequency" className="text-sm text-white/50">
+                       <label htmlFor="frequency" className="text-sm font-bold text-white">
                             Posting Frequency
                        </label>
 
-                       <select id="frequency" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                       <select id="frequency" className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent">
                            <option value="daily">Once a Day</option>
                            <option value="Twice">Twice a Day </option>
                            <option value="Thrice">Thrice a day </option>
