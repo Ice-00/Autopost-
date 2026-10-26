@@ -4,7 +4,7 @@ import StatCard from "../components/statcard";
 function Posts() {
   return (
     <div>
-      <div className="flex items-start justify-between">
+      <div className="flex items-start justify-between mt-0">
         <div>
           <h1 className="text-2xl font-semibold text-white">
             Posts

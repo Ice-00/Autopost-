@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Sidebar from "./components/sidebar";
-import Header from "./components/Header";
+
 import Dashboard from "./pages/Dashboard";
 import Posts from "./pages/Posts";
 
@@ -11,8 +11,6 @@ function App() {
         <Sidebar />
 
         <main className="flex-1 p-8">
-          <Header />
-
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/posts" element={<Posts />} />

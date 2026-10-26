@@ -1,6 +1,7 @@
 import { useState } from "react";
 import StatCard from "../components/statcard";
 import ContentEngine from "../components/ContentEngine";
+import Header from "../components/Header";
 import NextPost from "../components/NextPost";
 import RecentPosts from "../components/RecentPosts";
 import QuickActions from "../components/QuickActions";
@@ -32,6 +33,7 @@ function Dashboard() {
 
   return (
     <>
+     <Header />
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold">
