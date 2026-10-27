@@ -1,4 +1,4 @@
-import { FileText, CalendarDays, Check, Clock, Heart, MessageCircle, Eye } from "lucide-react";
+import { FileText, CalendarDays, Check, Clock, Heart, MessageCircle, Eye, Pencil, Trash } from "lucide-react";
 import StatCard from "../components/statcard";
 
 function Posts() {
@@ -22,7 +22,7 @@ function Posts() {
       date: "Oct 11, 2026",
       time: "9:00 am",
       platform: "X",
-      likes: 100,
+      likes:100,
       comments: 12,
       views: "1.2K",    
     },
@@ -121,15 +121,27 @@ function Posts() {
           return (
             <div
               key={post.text}
-              className="grid grid-cols-[3fr_1fr_1fr_1.5fr_1.5fr_1fr] gap-4 border-b border-white/20 py-4 "
+              className="grid grid-cols-[3fr_1fr_1fr_1.5fr_1.5fr_1fr] items-center gap-4 border-b border-white/20 py-4 "
             >
               <p>{post.text}</p>
               <p>{post.platform}</p>
-              <p>{post.status}</p>
+              <span
+                className={
+                  post.status === "Published"
+                    ? "w-fit rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-400"
+                    : post.status === "Scheduled"
+                      ? "w-fit rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400"
+                      : "w-fit rounded-full bg-amber-500/10 px-3 py-1 text-xs text-amber-400"
+                }
+              >
+                {post.status}
+              </span>
+
               <div className="flex flex-col gap-1 ">
                 <p className="text-sm text-white" >{post.date}</p>
                 <p className="text-xs text-white/40">{post.time}</p>
               </div>
+
               <div className="flex items-center gap-3 text-sm text-white">
 
                 <span className="flex items-center gap-1">
@@ -148,7 +160,17 @@ function Posts() {
                   </span>
 
               </div>
-              <p>Actions</p>
+
+              <div className="flex items-center gap-2 ">
+                <button className="rounded-lg border border-white/10 bg-blue/20 p-2 text-white/70 hover:bg-blue/30 ">
+                  <Pencil size={16} />
+                </button>
+
+                <button className="rounded-lg border border-white/10 bg-blue/20 p-2 text-white/70 hover:bg-blue/30 ">
+                  <Trash size={16} />
+                </button>
+              </div>
+
             </div>
           );
         })}
