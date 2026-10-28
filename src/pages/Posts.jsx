@@ -170,8 +170,8 @@ function Posts() {
                   <Pencil size={16} />
                 </button>
 
-                <button className="rounded-lg border border-white/10 bg-blue/20 p-2 text-white/70 hover:bg-blue/30 ">
-                  <Trash size={16} />
+                <button className="rounded-lg border border-white/10 bg-red-800/20 p-2 text-white/70 hover:bg-blue/30 ">
+                  <Trash className="text-red-400" size={16} />
                 </button>
               </div>
 
