@@ -83,6 +83,7 @@ function Posts() {
           value="12"
           change="↑ 20%"
           icon={FileText}
+          color="blue"
         />
 
         <StatCard
@@ -90,6 +91,7 @@ function Posts() {
           value="5"
           change="↑ 10%"
           icon={CalendarDays}
+          color="green"
         />
 
         <StatCard
@@ -97,6 +99,7 @@ function Posts() {
           value="6"
           change="↑ 50%"
           icon={Check}
+          color="purple"
         />
 
         <StatCard
@@ -104,6 +107,7 @@ function Posts() {
           value="1"
           change="↑ 1%"
           icon={Clock}
+          color="amber"
         />
       </div>
 
