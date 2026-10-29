@@ -32,24 +32,24 @@ function StatCard({title, value, change,icon: Icon, color }){
 
     return(
     
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+      <div className="rounded-xl border border-white/10 bg-white/5 p-6">
             
-            {Icon && styles ? (
-                <div className={`w-fit rounded-lg p-2 ${styles.bg}`}>
-                    <Icon className={styles.icon} size={20} />
-                </div>
-                ) : (
-                Icon && <Icon />
-            )}
+        {Icon && styles ? (
+            <div className={`w-fit rounded-lg p-2 ${styles.bg}`}>
+              <Icon className={styles.icon} size={20} />
+            </div>
+          ) : (
+          Icon && <Icon />
+        )}
               
 
-            <p className="text-sm text-white/50">{title}</p>
+          <p className="text-sm text-white/50">{title}</p>
             <p className="mt-2 text-3xl font-bold">{value}</p>
             <p className={`mt-2 text-sm ${isPositive ? 'text-green-400' : 'text-red-400'}`}>
             {change}
-            </p>
+          </p>
 
-        </div>
+      </div>
     )
 }
 
