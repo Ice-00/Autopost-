@@ -111,24 +111,29 @@ function Posts() {
         />
       </div>
 
-      <div className=" mt-6 grid grid-cols-[3fr_1fr_1fr_1.5fr_1.5fr_1fr] gap-4 border-b border-white/10 px-4 py-3 text-sm text-white/50 ">
-        <p>Content</p>
-        <p>Platform</p>
-        <p>Status</p>
-        <p>Scheduled For / Posted</p>
-        <p>Engagement</p>
-        <p>Actions</p>
-      </div>
+      <div className="mt-6 rounded-xl border border-white/10 bg-[#10182a] overflow-hidden">
 
-      <div className="mt-6 rounded-xl border border-white/10 bg-[#10182a] p-5">
+        {/* Table Header */}
+        <div className="grid grid-cols-[3fr_1fr_1fr_1.5fr_1.5fr_1fr] gap-4 border-b border-white/10 px-4 py-3 text-sm text-white/50">
+          <p>Content</p>
+          <p>Platform</p>
+          <p>Status</p>
+          <p>Scheduled For / Posted</p>
+          <p>Engagement</p>
+          <p>Actions</p>
+        </div>
+
+        {/* Posts */}
         {posts.map((post) => {
           return (
             <div
               key={post.text}
-              className="grid grid-cols-[3fr_1fr_1fr_1.5fr_1.5fr_1fr] items-center gap-4 border-b border-white/20 py-4 "
+              className="grid grid-cols-[3fr_1fr_1fr_1.5fr_1.5fr_1fr] items-center gap-4 border-b border-white/20 px-4 py-4"
             >
               <p>{post.text}</p>
+
               <p>{post.platform}</p>
+
               <span
                 className={
                   post.status === "Published"
@@ -141,13 +146,12 @@ function Posts() {
                 {post.status}
               </span>
 
-              <div className="flex flex-col gap-1 ">
-                <p className="text-sm text-white" >{post.date}</p>
+              <div className="flex flex-col gap-1">
+                <p className="text-sm text-white">{post.date}</p>
                 <p className="text-xs text-white/40">{post.time}</p>
               </div>
 
               <div className="flex items-center gap-3 text-sm text-white">
-
                 <span className="flex items-center gap-1">
                   <Heart size={14} />
                   {post.likes}
@@ -158,26 +162,47 @@ function Posts() {
                   {post.comments}
                 </span>
 
-                 <span className="flex items-center gap-1">
-                    <Eye size={14} />
-                    {post.views}
-                  </span>
-
+                <span className="flex items-center gap-1">
+                  <Eye size={14} />
+                  {post.views}
+                </span>
               </div>
 
-              <div className="flex items-center gap-2 ">
-                <button className="rounded-lg border border-white/10 bg-blue/20 p-2 text-white/70 hover:bg-blue/30 ">
+              <div className="flex items-center gap-2">
+                <button className="rounded-lg border border-white/10 bg-blue-500/20 p-2 text-white/70 hover:bg-blue-500/30">
                   <Pencil size={16} />
                 </button>
 
-                <button className="rounded-lg border border-white/10 bg-red-800/20 p-2 text-white/70 hover:bg-blue/30 ">
+                <button className="rounded-lg border border-white/10 bg-red-800/20 p-2 hover:bg-red-800/30">
                   <Trash className="text-red-400" size={16} />
                 </button>
               </div>
-
             </div>
           );
         })}
+        <div className="flex items-center justify-between px-4 py-4">
+          <p className="text-sm text-white/50">
+            Showing 6 of 12 posts
+          </p>
+
+          <div className="flex items-center gap-2">
+            <button className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/50">
+              ←
+            </button>
+
+            <button className="rounded-lg border border-blue-500 bg-blue-500 px-3 py-2 text-sm text-white">
+              1
+            </button>
+
+            <button className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/70 hover:bg-white/10">
+              2
+            </button>
+
+            <button className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/70 hover:bg-white/10">
+              →
+            </button>
+          </div>
+        </div>
       </div>
 
 
