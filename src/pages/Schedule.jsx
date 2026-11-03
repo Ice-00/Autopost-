@@ -6,9 +6,16 @@ import {
 } from "lucide-react";
 
 import StatCard from "../components/statcard";
-
+import { useState } from "react";
 
 function Schedule(){
+
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const month= currentDate.getMonth();
+    const year= currentDate.getFullYear();
+
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
     return(
         <div>
             {/* Header */}
@@ -63,6 +70,76 @@ function Schedule(){
                 />
 
             </div>
+
+            <div className="mt-6 grid grid-cols-[2.5fr_1fr] gap-4">
+
+                <div className="mt-4 grid grid-cols-7">
+                    {Array.from({ length: daysInMonth }, (_, index) => (
+                        <div
+                            key={index}
+                            className="min-h-28 border-r border-b border-white/10 p-3"
+                        >
+                            <p className="text-sm text-white/50">
+                                {index + 1}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+              
+
+                <div className="space-y-4">
+
+                    {/* Upcoming Posts */}
+                    <div className="rounded-xl border border-white/10 bg-[#10182a] overflow-hidden">
+
+                        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                        <h2 className="text-lg font-semibold">Upcoming Posts</h2>
+
+                        <button className="text-sm text-blue-400 hover:text-blue-300">
+                            View All
+                        </button>
+                        </div>
+
+                        <div className="p-4">
+                        {/* Posts will go here */}
+                        </div>
+
+                    </div>
+
+
+                    {/* Quick Actions */}
+                    <div className="rounded-xl border border-white/10 bg-[#10182a] overflow-hidden">
+
+                        <div className="border-b border-white/10 px-5 py-4">
+                        <h2 className="text-lg font-semibold">Quick Actions</h2>
+                        </div>
+
+                        <div className="space-y-2 p-4">
+
+                        <button className="flex w-full items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 hover:bg-white/10">
+                            <span>Schedule New Post</span>
+                            <span className="text-lg text-white/50">→</span>
+                        </button>
+
+                        <button className="flex w-full items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 hover:bg-white/10">
+                            <span>View All Scheduled</span>
+                            <span className="text-lg text-white/50">→</span>
+                        </button>
+
+                        </div>
+
+                    </div>
+
+              
+
+                </div>
+
+            </div>
+                    
+
+
+           
         </div>
     );
 }
