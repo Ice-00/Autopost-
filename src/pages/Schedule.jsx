@@ -13,8 +13,39 @@ function Schedule(){
     const [currentDate, setCurrentDate] = useState(new Date());
     const month= currentDate.getMonth();
     const year= currentDate.getFullYear();
-
+    const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const previousMonthDays = new Date(year, month, 0).getDate();
+
+   const previousMonthDates = Array.from(
+        { length: firstDay },
+        (_, index) => ({
+        day: previousMonthDays - firstDay + index + 1,
+        type: "previous"
+    })
+    );
+
+    const remainingDays = (7 - ((firstDay + daysInMonth) % 7)) % 7;
+
+    const nextMonthDates = Array.from(
+        { length: remainingDays },
+        (_, index) => index + 1
+    );
+
+    const calendarDays = [
+    ...previousMonthDates,
+    ...Array.from({ length: daysInMonth }, (_, index) => index + 1),
+    ...nextMonthDates
+    ];
+
+    const previousMonth = () => {
+    setCurrentDate(new Date(year, month - 1, 1));
+    };
+
+    const nextMonth = () => {
+    setCurrentDate(new Date(year, month + 1, 1));
+    };
+
 
     return(
         <div>
@@ -71,21 +102,67 @@ function Schedule(){
 
             </div>
 
-            <div className="mt-6 grid grid-cols-[2.5fr_1fr] gap-4">
 
-                <div className="mt-4 grid grid-cols-7">
-                    {Array.from({ length: daysInMonth }, (_, index) => (
-                        <div
-                            key={index}
-                            className="min-h-28 border-r border-b border-white/10 p-3"
+
+                {/* Calendar Header */}
+                <div className="mt-6 flex items-center justify-between rounded-t-xl border border-white/10 bg-[#10182a] px-5 py-4">
+
+                    <div className="flex items-center gap-4">
+
+                        <button
+                        onClick={previousMonth}
+                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10"
                         >
-                            <p className="text-sm text-white/50">
-                                {index + 1}
-                            </p>
-                        </div>
-                    ))}
+                            ←
+                        </button>
+
+                        <h2 className="text-xl font-semibold">
+                            {currentDate.toLocaleString("default", {
+                                month: "long",
+                                year: "numeric",
+                            })}
+                        </h2>
+
+                        <button
+                        onClick={nextMonth}
+                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10"
+                        >
+                            →
+                        </button>
+                    </div>
+
                 </div>
 
+            <div className="mt-6 grid grid-cols-[2.5fr_1fr] gap-4">
+
+                <div>
+                    {/* Weekday labels */}
+                    <div className="grid grid-cols-7 border-b border-white/10">
+                        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+                            <div
+                            key={day}
+                            className="border-r border-white/10 px-4 py-3 text-center text-sm text-white/50"
+                            >
+                            {day}
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Calendar dates */}
+                    <div className="grid grid-cols-7">
+                        {calendarDays.map((day, index) => (
+                            <div
+                            key={index}
+                            className="min-h-28 border-r border-b border-white/10 p-3"
+                            >
+                            <p className="text-sm text-white/50">
+                                {day}
+                            </p>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
               
 
                 <div className="space-y-4">
