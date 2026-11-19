@@ -40,14 +40,16 @@ function Sidebar() {
 
             <li className="rounded-lg p-3 hover:bg-white/10">
               <Link to="/schedule" className="flex items-center gap-3">
-                <FileText size={20} />
+                <CalendarDays size={20} />
                 <span>Schedule</span>
               </Link>
             </li>
 
-            <li className="flex items-center gap-3 rounded-lg p-3 hover:bg-white/10">
-              <BarChart3 size={20} />
-              <span>Analytics</span>
+            <li className="rounded-lg p-3 hover:bg-white/10">
+              <Link to="/analytics" className="flex items-center gap-3">
+                <BarChart3 size={15} />
+                <span>Analytics</span>
+              </Link>
             </li>
 
             <li className="flex items-center gap-3 rounded-lg p-3 hover:bg-white/10">

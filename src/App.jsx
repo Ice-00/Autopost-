@@ -3,6 +3,7 @@ import Sidebar from "./components/sidebar";
 import Dashboard from "./pages/Dashboard";
 import Posts from "./pages/Posts";
 import Schedule from "./pages/Schedule";
+import Analytics from "./pages/Analytics";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/posts" element={<Posts />} />
             <Route path= "/schedule" element={<Schedule />} />
+            <Route path="/analytics" element={<Analytics />} />
           </Routes>
         </main>
       </div>
