@@ -53,8 +53,10 @@ function Sidebar() {
             </li>
 
             <li className="flex items-center gap-3 rounded-lg p-3 hover:bg-white/10">
-              <Settings size={20} />
-              <span>Settings</span>
+              <Link to="/settings" className="flex items-center gap-3">
+                <Settings size={20} />
+                <span>Settings</span>
+              </Link>
             </li>
           </ul>
         </nav>
