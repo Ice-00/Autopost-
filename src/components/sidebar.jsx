@@ -11,7 +11,6 @@ import {
 
 
 function Sidebar() {
-  console.log("SIDEBAR RENDERING ");
   return (
     <aside className="flex min-h-screen w-64 flex-col justify-between border-r border-white/10">
       <div>
